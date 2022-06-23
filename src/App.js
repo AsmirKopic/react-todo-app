@@ -5,6 +5,10 @@ function App() {
     <>
       <TodoList />
       <input type="text" />
+      <button>Add todo</button>
+      <button>Clear all todos</button>
+
+      
     </>
   );
 }
