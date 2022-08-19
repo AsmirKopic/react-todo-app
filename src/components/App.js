@@ -52,6 +52,13 @@ function App() {
     setTodos(newTodos)
   }
 
+  // add button show/hide
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  function showAddButton() {
+    setIsExpanded(true)
+  }
+
 
   // testing with time change
   const time = new Date();
@@ -67,13 +74,6 @@ function App() {
     msg = "Good day."
   }
 
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  function showAddButton() {
-    setIsExpanded(true)
-  }
-
-
   return (
     <>
       <Typography variant="h2" >
@@ -83,13 +83,14 @@ function App() {
         {format(new Date(), 'do MMMM Y')}
       </Typography>
       <br></br>
-      
 
-      
-
-      <TextField sx={{ width: 300 }} id="standard-basic" label="Write a task name" variant="standard" onClick={showAddButton} inputRef={todoNameRef} />
-
-      
+      <TextField
+        sx={{ width: 300 }}
+        id="standard-basic"
+        label="Write a task name"
+        variant="standard"
+        onClick={showAddButton}
+        inputRef={todoNameRef} />
 
       <Zoom in={isExpanded}>
         <Fab onClick={handleAddTodo} size="small" color="secondary">
@@ -98,18 +99,18 @@ function App() {
       </Zoom>
 
       <br /><br />
-     
 
       <TodoList todos={todos} toggleTodo={toggleTodo} />
 
       <br /><br />
-      <Button startIcon={<DeleteSweepIcon />} color="secondary" size="small" onClick={handleClearTodos}>Clear completed</Button>
-
+      <Button
+        startIcon={<DeleteSweepIcon />}
+        color="secondary" size="small"
+        onClick={handleClearTodos}>Clear completed</Button>
 
       <Typography color="secondary">
         {todos.filter(todo => !todo.complete).length} left to do.
       </Typography>
-
     </>
   );
 }
