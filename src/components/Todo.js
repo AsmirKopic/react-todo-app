@@ -1,4 +1,6 @@
 import React from 'react'
+import Typography from '@mui/material/Typography';
+
 
 export default function Todo( {todo, toggleTodo} ) {
 
@@ -7,11 +9,11 @@ export default function Todo( {todo, toggleTodo} ) {
   }
 
   return (
-    <div>
+    <Typography style={todo.complete ? {textDecoration: "line-through"} : null }>
         <label>
             <input type="checkbox" checked={todo.complete} onChange={handleTodoClick} />
             {todo.name}
         </label>
-    </div>
+    </Typography>
   )
 }
