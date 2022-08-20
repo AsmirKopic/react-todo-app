@@ -1,6 +1,6 @@
 # ToDo App built with React using Material UI for style
 
-Created this app after being inroduced to the fundamentals of Material UI.
+Created this app after being introduced to the fundamentals of Material UI.
 
 #### Live demo deployed via Netlify --> https://magenta-yeot-6f012b.netlify.app/
 
